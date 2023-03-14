@@ -13,7 +13,7 @@ class UserType(TypedDict):
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, **kwargs: UserType):
+    def create(self, **kwargs: UserType):
         password = kwargs.pop("password")
         if email := kwargs.pop("email"):
             email = self.normalize_email(email).lower()
@@ -27,7 +27,7 @@ class UserManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, password, name):
-        return self.create_user(
+        return self.create(
             email=email,
             name=name,
             password=password,

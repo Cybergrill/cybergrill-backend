@@ -20,7 +20,7 @@ class User(TimeStampedModel, AbstractBaseUser, PermissionsMixin):
     role = models.CharField(max_length=30, choices=Roles.choices, default=Roles.ADMIN)
     phone = models.CharField(max_length=20, blank=True)
     is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = "email"
 
