@@ -11,6 +11,47 @@ django = "^4.1.7"
 djangorestframework = "^3.14.0"
 psycopg2 = "^2.9.5"
 python-dotenv = "^1.0.0"
+django-rest-swagger = "^2.2.0"
+django-model-utils = "^4.3.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+ruff = "^0.0.255"
+
+[tool.ruff]
+src = ["src"]
+line-length = 88
+
+exclude = [
+    "*/migrations/*",
+    "manage.py",
+]
+
+select = [
+    "F",
+    "I",
+    "N",
+    "YTT",
+    "S",
+    "B",
+    "COM",
+    "C4",
+    "DTZ",
+    "DJ",
+    "EM",
+    "EXE",
+    "ISC",
+    "ICN",
+    "G",
+    "T20",
+    "PYI",
+    "Q",
+    "RSE",
+    "RET",
+    "SIM",
+    "PL",
+]
+target-version = "py311"
 
 [build-system]
 requires = ["poetry-core"]
